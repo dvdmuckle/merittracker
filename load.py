@@ -14,9 +14,6 @@ import tkinter as tk
 from config import appname
 
 from typing import Optional, Tuple
-import l10n
-import functools
-_ = functools.partial(l10n.Translations.translate, context=__file__)
 
 # This **MUST** match the name of the folder the plugin is in.
 PLUGIN_NAME = "merittracker"
@@ -43,7 +40,7 @@ class MeritTracker:
     def journal_entry(self, event: str, state: Dict[str, Any]) -> None:
         global merits
         if event == 'Powerplay':
-            logger.info('Deteted Powerplay event')
+            logger.info('Detected Powerplay event')
             merits["text"] = state['Powerplay']['Merits']
 
 
